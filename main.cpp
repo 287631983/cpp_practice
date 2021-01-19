@@ -8,25 +8,59 @@
 
 using namespace std;
 
-class Box
-{
+class Student{
     private:
-        int length;
+        char *m_name;
+        int m_age;
+        float m_score;
     public:
-        Box(int i)
-        {
-            length = i;
-        }
-        int printLength(Box);
+        Student();
+        Student(char *name, int age, float score);
+        void setname(char *name);
+        void setage(int age);
+        void setscore(float score);
+        void show();
 };
 
-int Box::printLength(Box)
+Student::Student()
 {
-    return length;
+    m_name = "小兰";
+    m_age = 16;
+    m_score = 96.1;
+}
+
+Student::Student(char *name, int age, float score)
+{
+    m_name = name;
+    m_age = age;
+    m_score = score;
+}
+
+void Student::setname(char *name)
+{
+    m_name = name;
+}
+
+void Student::setage(int age)
+{
+    m_age = age;
+}
+
+void Student::setscore(float score)
+{
+    m_score = score;
+}
+
+void Student::show()
+{
+    cout << "name: " << m_name << " age: " << m_age << " score: " << m_score << endl;
 }
 
 int main()
 {
-    Box b(25);
-    cout << "Length of box: " << b.printLength(b) << endl;
+    Student *stu = new Student();
+
+    stu->show();
+
+    return 0;
 }
