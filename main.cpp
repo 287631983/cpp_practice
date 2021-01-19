@@ -8,57 +8,22 @@
 
 using namespace std;
 
-class Student{
+class VLA{
     private:
-        char *m_name;
-        int m_age;
-        float m_score;
+        const int m_len;
+        int *m_arr;
     public:
-        Student();
-        Student(char *name, int age, float score);
-        void setname(char *name);
-        void setage(int age);
-        void setscore(float score);
-        void show();
+        VLA(int len);
 };
 
-Student::Student()
-{
-    m_name = "小兰";
-    m_age = 16;
-    m_score = 96.1;
-}
-
-Student::Student(char *name, int age, float score):m_name(name),m_age(age),m_score(score)
+VLA::VLA(int len):m_len(len)
 {
 
 }
 
-void Student::setname(char *name)
+int main(int argc, char **argv)
 {
-    m_name = name;
-}
-
-void Student::setage(int age)
-{
-    m_age = age;
-}
-
-void Student::setscore(float score)
-{
-    m_score = score;
-}
-
-void Student::show()
-{
-    cout << "name: " << m_name << " age: " << m_age << " score: " << m_score << endl;
-}
-
-int main()
-{
-    Student *stu = new Student("小花", 17, 87.1f);
-
-    stu->show();
+    VLA *vla = new VLA(5);
 
     return 0;
 }
