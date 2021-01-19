@@ -13,19 +13,20 @@ class Box
     private:
         int length;
     public:
-        Box(): length(0)
+        Box(int i)
         {
-
+            length = i;
         }
-         int printLength(Box)
-         {
-             length += 10;
-             return length;
-         }
+        int printLength(Box);
 };
+
+int Box::printLength(Box)
+{
+    return length;
+}
 
 int main()
 {
-    Box b;
+    Box b(25);
     cout << "Length of box: " << b.printLength(b) << endl;
 }
