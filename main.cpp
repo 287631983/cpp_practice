@@ -29,11 +29,9 @@ Student::Student()
     m_score = 96.1;
 }
 
-Student::Student(char *name, int age, float score)
+Student::Student(char *name, int age, float score):m_name(name),m_age(age),m_score(score)
 {
-    m_name = name;
-    m_age = age;
-    m_score = score;
+
 }
 
 void Student::setname(char *name)
@@ -58,7 +56,7 @@ void Student::show()
 
 int main()
 {
-    Student *stu = new Student();
+    Student *stu = new Student("小花", 17, 87.1f);
 
     stu->show();
 
